@@ -1,0 +1,34 @@
+.footer{
+    background-color: #222;
+    text-align: center;
+    padding: 3em;
+    color: #fff
+}
+
+.list_icon{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.list_icon li{
+    margin-right: 1em ;
+    font-size: 1.5em;
+}
+
+.list_icon a{
+    color: #fff;
+}
+
+.list_icon a:hover{
+    color: #fb3;
+}
+
+.copy_right{
+    margin-top: 2em;
+}
+
+.copy_right span{
+    color: #fb3;
+    font-weight: bold;
+}
