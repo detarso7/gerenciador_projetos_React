@@ -1,0 +1,15 @@
+.btn{
+    background-color: #fb3;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+    border: 1px solid #fb3;
+    color: #222;
+    font-weight: bold;
+    transition: .5s;
+}
+
+.btn:hover{
+    background-color: #fff;
+    border: 1px solid #fb3;
+
+}
