@@ -5,21 +5,35 @@
     padding: 2em;
 }
 
+.navbar a{
+display: flex;
+justify-content: space-between;
+align-items: center;
+    }
+
+.navbar a span{
+text-transform: uppercase;
+font-size: 2em;
+font-weight: 700;
+color: #fb3;
+margin-left: .5em;
+}
+
 .list{
     display: flex;
     list-style: none;
     align-items: center;
 }
 
-.item{
+.list li{
     margin-right: 1rem;
 }
 
-.item a {
+.list li a {
     text-decoration: none;
     color: #fff
 }
 
-.item a:hover{
+.list li a:hover{
     color: #fb3;
 }
