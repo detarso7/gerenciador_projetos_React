@@ -1,8 +1,11 @@
+import Message from "./Message"
+
 function Home(props){
     return(
-    <>
-    <h2>Projetos</h2>
-    </>
+        <div>
+            <h1>Meus Projetos</h1>
+            <Message type="success" msg="Alguma mensagem"/>
+        </div>
     )
     
 }
