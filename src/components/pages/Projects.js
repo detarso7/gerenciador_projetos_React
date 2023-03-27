@@ -1,6 +1,6 @@
 import Message from "./Message"
 import { useLocation } from 'react-router-dom'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Container from "../layout/Container";
 import LinkButton from "../layout/LinkBottun";
@@ -13,26 +13,30 @@ import styles from './Projects.module.css'
 
 function Projects(props){
 
+  //GET
     const [projects, setProjects] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/projects', {
+        fetch('http://localhost:5000/project', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
           },
         })
           .then((resp) => resp.json())
-          .then((data) => setProjects(data))
+          .then((data) => {setProjects(data)})
           .catch((err) => console.log(err))
       }, [])
+    //
 
+    //Message
     const location = useLocation()
     let message = ''
 
     if (location.state) {
       message = location.state.message
     }
+    //
 
     return(
         <div className={styles.project_container}> 
@@ -46,14 +50,17 @@ function Projects(props){
 
             <Container customClass="start">
 
-                {projects.map((data) =>(
-                <ProjectsCard 
-                id={data.id} 
-                name={data.name} 
-                budget={data.budget} 
-                category={data.category}/>)) }
+                {projects.length > 0 &&
+                projects.map((pro) => (
+                <ProjectsCard
+                id={pro.id}
+                name={pro.name}
+                budget={pro.budget}
+                key={pro.id}
+                category={pro.category.name}/>
+                ))}
 
-            </Container>
+            </Container> 
 
         </div>
     )
