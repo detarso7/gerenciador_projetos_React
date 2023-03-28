@@ -16,7 +16,7 @@ function Projects(props){
 
   //GET
     const [projects, setProjects] = useState([])
-  // Loader
+  // LOADER
     const [removeLoading, setRemoveLoading] = useState(true)
   // MESSAGE REMOVE
     const [projectMessage, setProjectMessage] = useState('')
@@ -39,7 +39,6 @@ function Projects(props){
       }, 300)
       }, [])
     //
-
 
     //METODO REMOVE
     function removeProject(id) {
