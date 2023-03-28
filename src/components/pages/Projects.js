@@ -18,7 +18,10 @@ function Projects(props){
     const [projects, setProjects] = useState([])
   // Loader
     const [removeLoading, setRemoveLoading] = useState(true)
+  // MESSAGE REMOVE
+    const [projectMessage, setProjectMessage] = useState('')
 
+  //METODO GET
     useEffect(() => {
       setTimeout(()=>{
         fetch('http://localhost:5000/project', {
@@ -36,6 +39,24 @@ function Projects(props){
       }, 300)
       }, [])
     //
+
+
+    //METODO REMOVE
+    function removeProject(id) {
+      fetch(`http://localhost:5000/project/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+        .then((resp) => resp.json())
+        .then(() => {
+          setProjects(projects.filter((pro) => pro.id !== id))
+          setProjectMessage('Projeto removido com sucesso')
+        })
+        .catch((err) => console.log(err))
+    }
+
 
     //Message
     const location = useLocation()
@@ -56,6 +77,7 @@ function Projects(props){
             </div>
 
                 {message && <Message type="success" msg={message} />}
+                {projectMessage && <Message type="success" msg={projectMessage} />}
 
             <Container customClass="start">
 
@@ -66,7 +88,8 @@ function Projects(props){
                     name={pro.name}
                     budget={pro.budget}
                     key={pro.id}
-                    category={pro.category.name}/>
+                    category={pro.category.name}
+                    handleRemove={removeProject}/>
                   ))}
                   
                   {removeLoading && <Loading/>}    
