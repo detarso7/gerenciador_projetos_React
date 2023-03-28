@@ -24,7 +24,7 @@ function Project(){
     }, [id])
     console.log(project)
 
-    return(<p>Projeto</p>)
+    return(<p>{project.name}</p>)
 }
 
 export default Project
