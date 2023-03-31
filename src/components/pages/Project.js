@@ -42,8 +42,9 @@ function Project(){
     function editPost(project){
 
         if(project.budget < project.cost) {
-            setMessage('O orçamento não pode ser menor que o custo o orçamento!')
+            setMessage('O orçamento do projeto não pode ser menor do que o custo dos serviços!')
             setType('error')
+            setTimeout(() => {setMessage('');}, 3010);
             return false
         }
 
