@@ -1,7 +1,8 @@
-import Message from "./Message"
+
 import { useLocation } from 'react-router-dom'
 import { useEffect, useState } from "react";
 
+import Message from "./Message"
 import Container from "../layout/Container";
 import LinkButton from "../layout/LinkBottun";
 import Loading from "../layout/Loading";

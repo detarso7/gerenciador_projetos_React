@@ -1,7 +1,7 @@
 {
   "project": [
     {
-      "name": "Projeto 01",
+      "name": "Alterando alterado Projeto 01",
       "budget": "500.00",
       "category": {
         "id": "2",
@@ -12,11 +12,11 @@
       "id": 1
     },
     {
-      "name": "Projeto 02",
+      "name": "Projeto  02",
       "budget": "200.00",
       "category": {
-        "id": "4",
-        "name": "Infra"
+        "id": "2",
+        "name": "Desenvolvimento"
       },
       "cost": 0,
       "services": [],
