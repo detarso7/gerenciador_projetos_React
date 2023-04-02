@@ -21,6 +21,24 @@
       "cost": 0,
       "services": [],
       "id": 2
+    },
+    {
+      "name": "Teste 4",
+      "budget": "100",
+      "category": {
+        "id": "3",
+        "name": "Design"
+      },
+      "cost": 10,
+      "services": [
+        {
+          "name": "Teste",
+          "cost": "10",
+          "description": "asdsaf",
+          "id": "ea550c18-f482-4fa7-943e-1fd4884cbf7e"
+        }
+      ],
+      "id": 3
     }
   ],
   "categories": [
